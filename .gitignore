@@ -15,3 +15,11 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
