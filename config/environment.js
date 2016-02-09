@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'office-space',
+    podModulePrefix: 'office-space/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
