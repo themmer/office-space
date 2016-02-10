@@ -1,13 +1,15 @@
-Characters list:
-
-<div class="row list-wrapper">
-  <ul class="list-group">
+<div class="col-md-3">
+  <div class="list-group">
     {{#each model as |character|}}
-      <img src="assets/characters/{{character.name}}.jpg" />
-      <li class="list-group-item"><em>{{character.name}}</em></li>
+      {{#link-to "characters.character.quotes" character class="list-group-item
+character-link"}}
+        {{character.name}}
+      {{/link-to}}
     {{/each}}
-  </ul>
+  </div>
 </div>
-
-{{outlet}}
-<br/>
+<div class="col-md-8">
+  <div class="list-group">
+    {{outlet}}
+  </div>
+</div>

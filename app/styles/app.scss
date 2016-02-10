@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 html, body {
-  margin: 20px;
+  margin: 20 0px;
 }
 
 .page-header a h1 {
@@ -16,4 +16,30 @@ html, body {
 .navbar-default .navbar-nav > li > a.active, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
   background-color: #e7e7e7;
+}
+
+/* */
+.empty-list {
+  min-height: 100px;
+  text-align: center;
+}
+
+.empty-list .empty-message {
+  display: inline-block;
+  color: #555;
+  line-height: 100px;
+}
+
+.character-link .pointer {
+  float: right;
+  display: none;
+}
+
+.character-link.active .pointer {
+  display: block;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
 }
