@@ -21,53 +21,54 @@ var Character = Ember.Object.extend({
 });
 
 var characters =
-  [Character.create({
-    name: 'Bill Lumbergh',
-    realName: ''
-  }),
+  [
+    Character.create({
+      name: 'Bill Lumbergh',
+      realName: 'Gary Cole'
+    }),
     Character.create({
       name: 'Bob Porter',
-      realName: '',
+      realName: '	Paul Willson',
     }),
     Character.create({
       name: 'Bob Slydell',
-      realName: ''
+      realName: 'John C. McGinley'
     }),
     Character.create({
       name: 'Drew',
-      realName: ''
+      realName: 'Greg Pitts'
     }),
     Character.create({
       name: 'Joanna',
-      realName: ''
+      realName: 'Jennifer Aniston'
     }),
     Character.create({
       name: 'Lawrence',
-      realName: ''
+      realName: 'Diedrich Bader'
     }),
     Character.create({
       name: 'Michael Bolton',
-      realName: ''
+      realName: 'David Herman'
     }),
     Character.create({
       name: 'Milton Waddams',
-      realName: ''
+      realName: 'Stephen Root'
     }),
     Character.create({
       name: 'Nina',
-      realName: ''
+      realName: 'Kinna McInroe'
     }),
     Character.create({
       name: 'Peter Gibbons',
-      realName: ''
+      realName: 'Ron Livingston'
     }),
     Character.create({
       name: 'Samir Nagheenanajar',
-      realName: ''
+      realName: 'Ajay Naidu'
     }),
     Character.create({
       name: 'Tom Smykowski',
-      realName: ''
+      realName: 'Richard Riehle'
     })];
 
 export default Ember.Route.extend({
