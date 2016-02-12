@@ -1,8 +1,12 @@
 <div class="row list-wrapper">
   <ul class="list-group songs">
-    {{#each model.quotes as |quote|}}
+    {{#each model.quotes as |quoteList|}}
       <li class="list-group-item">
-        <em>{{quote}}</em>
+        <em>
+          {{#each quoteList as |quote|}}
+            {{quote}}<br/>
+          {{/each}}
+        </em>
       </li>
     {{/each}}
   </ul>
