@@ -13,7 +13,9 @@ html, body {
   margin-right: 0;
 }
 
-.navbar-default .navbar-nav > li > a.active, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > li > a.active,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
   background-color: #e7e7e7;
 }
@@ -39,7 +41,11 @@ html, body {
   display: block;
 }
 
-.col-centered{
+.col-centered {
   float: none;
   margin: 0 auto;
+}
+
+.view-selection {
+  margin: 20px 0px;
 }
