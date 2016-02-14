@@ -3,7 +3,7 @@
     {{#each model as |character|}}
       {{#link-to "characters.character.quotes" character class="list-group-item
 character-link"}}
-        {{character.name}}
+        {{character.name}}<br/><span class="character-real-name">{{character.realName}}</span>
       {{/link-to}}
     {{/each}}
   </div>

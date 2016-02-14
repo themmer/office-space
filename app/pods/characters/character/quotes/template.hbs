@@ -3,8 +3,9 @@
     {{#each model.quotes as |quoteList|}}
       <li class="list-group-item">
         <em>
-          {{#each quoteList as |quote|}}
-            {{quote}}<br/>
+          {{#each quoteList as |quoteLine|}}
+            <strong>{{quoteLine.character}}</strong>{{#if quoteLine.character}}: {{/if}}
+            {{quoteLine.quote}}<br/>
           {{/each}}
         </em>
       </li>

@@ -1,21 +1,9 @@
 import Ember from 'ember';
 
-//var Character = Ember.Object.extend({
-//  name: '',
-//  realName: '',
-//  quotes: []
-//});
-//
-//var Quote = Ember.Object.extend({
-//  quote: '',
-//});
-
 var Character = Ember.Object.extend({
-  name: '',
-  realName: '',
-  //quotes: ['1', '2', '3'],
+  name: null,
+  realName: null,
   slug: Ember.computed('name', function() {
-    console.log('Recomputing slug');
     return this.get('name').dasherize();
   })
 });
@@ -77,24 +65,44 @@ var quotes = "Samir: No one in this country can ever pronounce my name right. It
 export default Ember.Route.extend({
   model: function() {
     // This is where you can load data via promises (E.G. rest service)
-    var mainQuotes = Ember.A([]);
+    let mainQuotes = Ember.A();
     // Chopping local data into model
-    var quotesGroupArray = Ember.A(quotes.split('\n\n'));
+    let quotesGroupArray = Ember.A(quotes.split('\n\n'));
+
     quotesGroupArray.forEach(function(item) {
-      var dialogArray = item.split('\n');
-      mainQuotes.pushObject(dialogArray);
+      let newQuotesGroupArray = Ember.A();
+      let dialogArray = Ember.A(item.split('\n'));
+      dialogArray.forEach(function(lineQuote) {
+        let quoteSplit = lineQuote.split(': ');
+        let quoteLine;
+        if (quoteSplit.length > 1) {
+          // careful on the splitter, hashing back together in case there is more than one :
+          let quotePart = quoteSplit.slice(1,quoteSplit.length).join(': ');
+          quoteLine = {
+            character: quoteSplit[0],
+            quote: quotePart
+          };
+        } else {
+          quoteLine = {
+            quote: lineQuote
+          };
+        }
+        newQuotesGroupArray.pushObject(quoteLine);
+      });
+      mainQuotes.pushObject(newQuotesGroupArray);
     });
 
     characters.forEach(function(character) {
       var name = character.name;
       character.quotes = Ember.A();
-      mainQuotes.forEach(function(quoteDialogArray) {
-        quoteDialogArray.every(function(lineQuote) {
-          if (lineQuote.startsWith(name)) {
-            console.log('inserting', quoteDialogArray);
-            character.quotes.pushObject(quoteDialogArray);
+      mainQuotes.forEach(function(quoteGroupArray) {
+        quoteGroupArray.every(function(lineQuoteObject) {
+          if (lineQuoteObject.character && lineQuoteObject.character.startsWith(name)) {
+            // We have a match, we take the whole group and assign to the character
+            character.quotes.pushObject(quoteGroupArray);
             return false;
           }
+          return true;
         });
       });
     });

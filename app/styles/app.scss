@@ -32,6 +32,10 @@ html, body {
   line-height: 100px;
 }
 
+.character-link {
+  font-weight: bold;
+}
+
 .character-link .pointer {
   float: right;
   display: none;
@@ -41,9 +45,8 @@ html, body {
   display: block;
 }
 
-.col-centered {
-  float: none;
-  margin: 0 auto;
+.character-real-name {
+  font-weight: normal;
 }
 
 .view-selection {
