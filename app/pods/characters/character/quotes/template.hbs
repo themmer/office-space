@@ -4,8 +4,7 @@
       <li class="list-group-item">
         <em>
           {{#each quoteList as |quoteLine|}}
-            <strong>{{quoteLine.character}}</strong>{{#if quoteLine.character}}: {{/if}}
-            {{quoteLine.quote}}<br/>
+            {{line-quote selectedCharacter=model quoteLine=quoteLine}}
           {{/each}}
         </em>
       </li>

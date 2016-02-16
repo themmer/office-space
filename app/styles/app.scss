@@ -4,22 +4,6 @@ html, body {
   margin: 20 0px;
 }
 
-.page-header a h1 {
-  color: #555;
-}
-
-.list-wrapper {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.navbar-default .navbar-nav > li > a.active,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #555555;
-  background-color: #e7e7e7;
-}
-
 /* */
 .empty-list {
   min-height: 100px;
@@ -51,4 +35,12 @@ html, body {
 
 .view-selection {
   margin: 20px 0px;
+}
+
+.character-quote-name {
+  font-weight: bold;
+}
+
+.character-quote-name-selected {
+  color: #337ab7;
 }
