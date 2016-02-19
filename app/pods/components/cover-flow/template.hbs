@@ -1,0 +1,20 @@
+{{#jquery-coverflow
+  select=selectCoverFlowCallback
+  density=1
+  enableClick=true
+  enableKeyboard=true
+  enableWheel=false
+  index=selectedIndex
+  innerAngle=190
+  innerScale=0.75
+  innerOffset=60
+  outerAngle=100
+  outerScale=0.10
+  width=214
+}}
+  {{#each characterList as |character|}}
+    {{#jquery-coverflow-cover}}
+      <img src="assets/characters/{{character.slug}}.jpg"/>
+    {{/jquery-coverflow-cover}}
+  {{/each}}
+{{/jquery-coverflow}}
