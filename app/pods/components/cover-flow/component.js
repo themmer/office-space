@@ -11,13 +11,10 @@ export default Ember.Component.extend({
     return (event, cover, index) => {
       let dataList = this.get('dataList');
       let selectedData = dataList[index];
-      this.set('selectedData', selectedData);
-      console.log('we are seeing a change in coverflow', selectedData);
+      console.log('coverflow change', selectedData);
       this.get('dataChangedAction')(selectedData);
     };
   }),
 
-  selectedData: null,
-
-  selectedIndex: 1
+  selectedIndex: 0
 });

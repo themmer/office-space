@@ -107,7 +107,6 @@ export default Ember.Route.extend({
       });
     });
 
-    //JSON.stringify(characters));
     return characters;
   }
 });

@@ -6,7 +6,9 @@ export default Ember.Controller.extend({
 
   actions: {
     dataChangedAction(selectedData) {
-      console.log('yep', selectedData);
+      this.set('selectedCharacter', selectedData);
+      this.transitionToRoute('characters.character.quotes', selectedData.get('slug'));
+      return true;
     }
   }
 });
