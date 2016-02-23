@@ -108,5 +108,12 @@ export default Ember.Route.extend({
     });
 
     return characters;
+  },
+
+  actions: {
+    routeChange: function(selectedData){
+      console.log('changing route ', selectedData);
+      this.controller.set('selectedData', selectedData);
+    }
   }
 });

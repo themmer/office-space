@@ -5,6 +5,8 @@ export default Ember.Component.extend({
 
   dataList: null,
 
+  selectedData: null,
+
   changedDataAction: null,
 
   selectCoverFlowCallback: Ember.computed(function() {
@@ -16,5 +18,17 @@ export default Ember.Component.extend({
     };
   }),
 
-  selectedIndex: 0
+  selectedIndex: Ember.computed('dataList', 'selectedData', function() {
+    let dataList = this.get('dataList');
+    let selectedData = this.get('selectedData');
+
+    if(selectedData) {
+      let index = dataList.indexOf(selectedData);
+      console.log('Returning index: ', index);
+      return index;
+    } else {
+      console.log('Defaulting to first coverflow');
+      return 0;
+    }
+  })
 });
