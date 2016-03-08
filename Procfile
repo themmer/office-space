@@ -1,1 +1,1 @@
-web: npm install && ember serve --environment production --port $PORT
+web: ember serve --environment production --port $PORT
