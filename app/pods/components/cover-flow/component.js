@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   selectedData: null,
 
-  changedDataAction: null,
+  dataChangedAction: null,
 
   selectCoverFlowCallback: Ember.computed(function() {
     return (event, cover, index) => {
